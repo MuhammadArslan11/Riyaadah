@@ -1,25 +1,22 @@
-//import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { primaryColor, secondaryColor, textColor } from './screens/colors';
 
-// create a component
-const MyComponent = () => {
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text>MyComponent</Text>
+      <Text>App</Text>
     </View>
   );
 };
 
-// define your styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#2c3e50',
+    backgroundColor: primaryColor,
   },
 });
 
-//make this component available to the app
-export default MyComponent;
+export default App;
