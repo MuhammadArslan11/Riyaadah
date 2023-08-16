@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { primaryColor, secondaryColor, textColor } from './screens/colors';
+import React,{} from 'react';
+// import { primaryColor, secondaryColor, textColor } from './screens/colors';
+import { NavigationContainer } from '@react-navigation/native';
+import   AuthNavigator from './Utils/Navigation/Routes';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const App = () => {
+function App () {
+  const stack = createStackNavigator();
+  
   return (
-    <View style={styles.container}>
-      <Text>App</Text>
-    </View>
+    <NavigationContainer>
+    <AuthNavigator />
+    </NavigationContainer>
+    
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: primaryColor,
-  },
-});
+
 
 export default App;
