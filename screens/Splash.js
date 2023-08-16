@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NAVIGATION_ROUTES } from '../Utils/Navigation/NavigationRoutes';
 import { primaryColor, secondaryColor, textColor } from './colors';
@@ -9,10 +9,13 @@ const Splash = () => {
         <View style={styles.container}>
             <View style={styles.curveLine}></View>
             <View style={styles.centerText}>
+                <Image
+                    style={styles.logo}
+                    source={require('../Utils/Assets/images/splash.png')}
+                />
                 <Text style={styles.arabicText}>رياضة</Text>
                 <Text style={styles.englishText}>RIYAADAH</Text>
             </View>
-
         </View>
     );
 };
@@ -26,24 +29,32 @@ const styles = StyleSheet.create({
     },
     curveLine: {
         width: '100%',
-        height: 150, // Adjust height as needed
+        height: 150,
         backgroundColor: 'rgba(0, 0, 0, 0.1)',
         position: 'absolute',
-        top: 300,
+        top: 0,
         left: 0,
+        borderBottomEndRadius: 200,
     },
     centerText: {
+        flex: 1,
+        justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 20,
     },
     englishText: {
-        fontSize: 20,
-        color: textColor, // Text color
+        fontSize: 24,
+        color: textColor,
     },
     arabicText: {
-        fontSize: 60,
-        color: textColor, // Text color
+        fontSize: 32,
+        color: textColor,
         fontWeight: 'bold',
+        marginBottom: 10,
+    },
+    logo: {
+        width: 350,
+        height: 200,
+        marginTop: 20,
     },
 });
 
