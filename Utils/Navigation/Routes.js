@@ -16,11 +16,11 @@ const AuthNavigator = () => {
                 options={{ headerShown: false }}
             />
 
-            {/* <Stack.Screen
+            <Stack.Screen
                 name={NAVIGATION_ROUTES.HOME}
                 component={Home}
                 options={{ headerShown: false }}
-            /> */}
+            />
 
         </Stack.Navigator>
     );

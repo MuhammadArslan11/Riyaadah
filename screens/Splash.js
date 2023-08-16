@@ -1,10 +1,19 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NAVIGATION_ROUTES } from '../Utils/Navigation/NavigationRoutes';
 import { primaryColor, secondaryColor, textColor } from './colors';
 
 const Splash = () => {
+
+    const navigation = useNavigation();
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            navigation.navigate('Home'); 
+        }, 3000); // 3000 milliseconds (3 seconds)
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <View style={styles.container}>
             <View style={styles.curveLine}></View>
@@ -29,12 +38,13 @@ const styles = StyleSheet.create({
     },
     curveLine: {
         width: '100%',
-        height: 150,
+        height: 100,
         backgroundColor: 'rgba(0, 0, 0, 0.1)',
         position: 'absolute',
         top: 0,
         left: 0,
-        borderBottomEndRadius: 200,
+        borderBottomEndRadius: 100,
+        borderBottomStartRadius: 100,
     },
     centerText: {
         flex: 1,
@@ -46,7 +56,7 @@ const styles = StyleSheet.create({
         color: textColor,
     },
     arabicText: {
-        fontSize: 32,
+        fontSize: 42,
         color: textColor,
         fontWeight: 'bold',
         marginBottom: 10,
