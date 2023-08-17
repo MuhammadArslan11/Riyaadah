@@ -3,6 +3,7 @@ import { NAVIGATION_ROUTES } from './NavigationRoutes';
 import { createStackNavigator } from '@react-navigation/stack';
 import Splash from '../../screens/Splash';
 import Home from '../../screens/Home';
+import Azkar from '../../screens/Azkar';
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,12 @@ const AuthNavigator = () => {
             <Stack.Screen
                 name={NAVIGATION_ROUTES.HOME}
                 component={Home}
+                options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+                name={NAVIGATION_ROUTES.AZKAR}
+                component={Azkar}
                 options={{ headerShown: false }}
             />
 

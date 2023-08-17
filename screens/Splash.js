@@ -10,13 +10,13 @@ const Splash = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigation.navigate('Home'); 
-        }, 3000); // 3000 milliseconds (3 seconds)
+        }, 5000); // 3000 milliseconds (3 seconds)
         return () => clearTimeout(timer);
     }, []);
 
     return (
         <View style={styles.container}>
-            <View style={styles.curveLine}></View>
+            {/* <View style={styles.curveLine}></View> */}
             <View style={styles.centerText}>
                 <Image
                     style={styles.logo}
