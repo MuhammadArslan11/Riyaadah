@@ -10,7 +10,7 @@ const Splash = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigation.navigate('Home'); 
-        }, 5000); // 3000 milliseconds (3 seconds)
+        }, 2000); // 3000 milliseconds (3 seconds)
         return () => clearTimeout(timer);
     }, []);
 

@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { NAVIGATION_ROUTES } from '../Utils/Navigation/NavigationRoutes';
 import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
 import { primaryColor } from './colors';
+
 
 const data = [
     {
@@ -53,7 +56,10 @@ const AzkarItem = ({ name, description, index }) => {
     );
 };
 
+
 const Azkar = () => {
+
+    const navigate = useNavigation();
     return (
         <View style={styles.container}>
             <Text style={styles.heading}>Daily Azkar</Text>
